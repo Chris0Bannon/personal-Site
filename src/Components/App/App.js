@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import Header from '../Header/Header';
+import Portfolio from '../Portfolio/Portfolio';
+import Contact from '../Contact/Contact';
+import Home from '../Home/Home';
+
 
 class App extends Component {
   render() {
@@ -10,13 +13,16 @@ class App extends Component {
       <Router>
       <div className="App">
         <Header />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <p>
             Hello and welcome to my personal Website!
           </p>
-        </header>
       </div>
+      <Route exact path = "/"
+      component = {Home}/>
+      <Route path = "/contact"
+      component = {Contact}/>
+      <Route path = "/portfolio"
+      component = {Portfolio}/>
       </Router>
     );
   }
